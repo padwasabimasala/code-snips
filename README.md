@@ -10,3 +10,7 @@ awk '{ for ( i=1; i<=length; i++ ) arr[substr($0, i, 1)]++ }END{ for ( i in arr 
 
 Save file in vim as root
 :w !sudo tee %
+
+Format align columns of tab delim output:
+column -t -s"   " file
+
