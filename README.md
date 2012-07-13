@@ -34,3 +34,15 @@ while read line;
   do echo $line
 done < $INPUT
 
+# Drop all tables in Oracle Credit:tamla83 http://stackoverflow.com/questions/842530/plsql-drop-all-database-objects-of-a-user
+declare
+  cursor ix is
+    select *
+      from user_objects
+     where object_type in ('TABLE', 'VIEW', 'FUNCTION', 'SEQUENCE');
+begin
+ for x in ix loop
+   execute immediate('drop '||x.object_type||' '||x.object_name);
+ end loop;
+end;
+
