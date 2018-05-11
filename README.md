@@ -59,3 +59,9 @@ end;
 ## Bash script homedir
 `DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"`
 https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+
+## Run process in background
+
+`nohup ./myprogram.sh > /dev/null 2>&1 & echo $! > run.pid`
+
+https://stackoverflow.com/questions/20254155/how-to-run-nohup-and-write-its-pid-file-in-a-single-bash-statement?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
